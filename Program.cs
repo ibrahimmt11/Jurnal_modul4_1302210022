@@ -12,15 +12,31 @@ public class KodeBuah
         Blackberry,
         Ceri,
         Kelapa,
-        Jagung
+        Jagung,
+        Kurma,
+        Durian,
+        Anggur,
+        Melon,
+        Semangka
     }
 
-    public class
+    public class getKode
+    {
+        public static string getKodeBuah(NamaBuah namaBuah)
+        {
+            string[] kodeList = { "A00", "B00", "C00", "D00", "E00", "F00", "H00", "I00", "J00", "K00", "L00", "M00", "N00", "O00" };
+            return kodeList[(int)namaBuah];
+        }
+    }
 }
-internal class Program
+class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        getKode kodeBuah= new getKode();
+        NamaBuah buah = NamaBuah.Apel;
+        string kode = getKode.getKodeBuah(buah);
+        Console.WriteLine(buah + ": " + kode);
+
     }
 }
